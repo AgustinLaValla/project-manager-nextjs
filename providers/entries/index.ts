@@ -4,4 +4,4 @@ import { EntriesContext } from './EntriesContext';
 export { EntriesContext } from './EntriesContext';
 export { EntriesProvider } from './EntriesProvider';
 
-export const useEntriesProvider = () => React.useContext(EntriesContext);
+export const useEntriesContext = () => React.useContext(EntriesContext);

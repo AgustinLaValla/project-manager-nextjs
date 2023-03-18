@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Card, CardHeader, Grid, Typography } from '@mui/material'
 import { Layout } from '@/components/layout/Layout'
+import { EntryList } from '@/components/entries'
 
 export default function Home() {
   return (
@@ -10,26 +11,22 @@ export default function Home() {
 
         <Grid item xs={12} sm={4}>
           <Card sx={{ height: 'calc(100vh - 100px)' }}>
-            <CardHeader title="Pending">
-
-            </CardHeader>
-          </Card>
-          {/* Entry list */}
-        </Grid>
-
-        <Grid item xs={12} sm={4}>
-          <Card sx={{ height: 'calc(100vh - 100px)' }}>
-            <CardHeader title="Pending">
-
-            </CardHeader>
+            <CardHeader title="Pending" />
+            <EntryList status='pending' />
           </Card>
         </Grid>
 
         <Grid item xs={12} sm={4}>
           <Card sx={{ height: 'calc(100vh - 100px)' }}>
-            <CardHeader title="Pending">
+            <CardHeader title="In Progress" />
+            <EntryList status='in-progress' />
+          </Card>
+        </Grid>
 
-            </CardHeader>
+        <Grid item xs={12} sm={4}>
+          <Card sx={{ height: 'calc(100vh - 100px)' }}>
+            <CardHeader title="Finished" />
+            <EntryList status='finished' />
           </Card>
         </Grid>
 
