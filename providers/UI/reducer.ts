@@ -1,5 +1,7 @@
 import { Action } from "./actions"
-import { UIState } from "./UIProvider"
+export interface UIState {
+  sidemenuOpen: boolean;
+}
 
 
 const initialState: UIState = {

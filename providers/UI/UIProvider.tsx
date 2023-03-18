@@ -1,12 +1,8 @@
 
 
 import React from 'react'
-import { UIReducer } from './reducer';
+import { UIReducer, UIState } from './reducer';
 import { UIContext } from './UIContext'
-
-export interface UIState {
-  sidemenuOpen: boolean;
-}
 
 const initialState: UIState = {
   sidemenuOpen: false
