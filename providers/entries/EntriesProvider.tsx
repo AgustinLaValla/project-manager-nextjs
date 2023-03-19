@@ -36,7 +36,8 @@ export const EntriesProvider = ({ children }: EntriesProviderProps) => {
   const [state, dispatch] = React.useReducer(entriesReducer, initialState);
 
   const addNewEntry = (description: string) => dispatch({
-    type: 'ADD_NEW_ENTRY', payload: {
+    type: 'ADD_NEW_ENTRY',
+    payload: {
       _id: uuid(),
       description,
       createdAt: Date.now(),

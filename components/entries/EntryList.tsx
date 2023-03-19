@@ -16,7 +16,8 @@ export const EntryList: React.FC<Props> = ({ status }) => {
   const { isDragging, endDragging } = useUIContext();
 
   const entriesByStatus = React.useMemo(
-    () => entries.filter(entry => entry.status === status), [entries]
+    () => entries.filter(entry => entry.status === status),
+    [entries]
   );
 
   const onDrop = (event: React.DragEvent<HTMLDivElement>) => {
