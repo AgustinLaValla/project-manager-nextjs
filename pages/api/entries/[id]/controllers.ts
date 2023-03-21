@@ -6,7 +6,7 @@ export const getEntryByID = async (req: NextApiRequest, res: NextApiResponse) =>
   try {
     await db.connect();
 
-    const entry = await Entry.findById(req.query.id);
+    const entry = await Entry.findById(req.query.id).lean();
 
     await db.disconnect();
 

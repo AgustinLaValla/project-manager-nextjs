@@ -1,5 +1,6 @@
 import React from 'react'
-import { AppBar, IconButton, Toolbar, Typography } from '@mui/material'
+import NextLink from 'next/link';
+import { AppBar, IconButton, Toolbar, Typography, Link } from '@mui/material'
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 import { useUIContext } from '@/providers/UI'
 
@@ -18,9 +19,14 @@ export const Navbar = () => {
         >
           <MenuOutlinedIcon sx={{ color: 'white' }} />
         </IconButton>
-        <Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
-          Project Manager
-        </Typography>
+        <NextLink href='/' passHref>
+
+          <Typography variant='h6' color="white" component='div' sx={{ flexGrow: 1 }}>
+            Project Manager
+          </Typography>
+
+
+        </NextLink>
       </Toolbar>
     </AppBar>
   )
