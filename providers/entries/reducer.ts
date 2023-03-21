@@ -13,6 +13,12 @@ const initialState: EntriesState = {
 export const entriesReducer = (state: EntriesState = initialState, action: Action): EntriesState => {
   switch (action.type) {
 
+    case 'SET_ENTRIES':
+      return {
+        ...state,
+        entries: action.payload
+      }
+
     case 'ADD_NEW_ENTRY':
       return {
         ...state,

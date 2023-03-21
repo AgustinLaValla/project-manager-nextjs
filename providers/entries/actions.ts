@@ -10,4 +10,9 @@ interface UPDATE_ENTRY {
   payload: Entry;
 }
 
-export type Action = ADD_NEW_ENTRY | UPDATE_ENTRY;
+interface SET_ENTRIES {
+  type: 'SET_ENTRIES',
+   payload:  Entry[]
+}
+
+export type Action = ADD_NEW_ENTRY | UPDATE_ENTRY | SET_ENTRIES;
