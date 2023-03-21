@@ -42,6 +42,7 @@ export const NewEntry = () => {
               helperText={!inputValue.length && touched && 'Required'}
               error={!inputValue.length && touched}
               onBlur={() => setTouched(true)}
+              fullWidth
             />
             <Box sx={{ display: 'flex', marginTop: '1rem' }}>
               <Button

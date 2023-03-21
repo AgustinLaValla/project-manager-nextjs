@@ -22,8 +22,6 @@ export const createEntry = async (req: NextApiRequest, res: NextApiResponse) => 
   if (!description) return res.status(400).json({ ok: false, message: 'Description is required' });
 
   try {
-
-
     await db.connect();
     const entry = new Entry({ description });
     await entry.save();

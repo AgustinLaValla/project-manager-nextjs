@@ -11,7 +11,7 @@ export default function Home() {
     <Layout title="Home - Project Manager">
       <Grid container spacing={2}>
 
-        <Grid item xs={12} sm={4}>
+        <Grid item xs={12} md={4}>
           <Card sx={{ height: 'calc(100vh - 100px)' }}>
             <CardHeader title="Pending" />
             <NewEntry />
@@ -19,14 +19,14 @@ export default function Home() {
           </Card>
         </Grid>
 
-        <Grid item xs={12} sm={4}>
+        <Grid item xs={12} md={4}>
           <Card sx={{ height: 'calc(100vh - 100px)' }}>
             <CardHeader title="In Progress" />
             <EntryList status='in-progress' />
           </Card>
         </Grid>
 
-        <Grid item xs={12} sm={4}>
+        <Grid item xs={12} md={4}>
           <Card sx={{ height: 'calc(100vh - 100px)' }}>
             <CardHeader title="Finished" />
             <EntryList status='finished' />
