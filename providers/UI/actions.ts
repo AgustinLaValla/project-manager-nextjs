@@ -19,9 +19,19 @@ interface END_DRAGGING {
   type: 'END_DRAGGING',
 }
 
+interface OPEN_MODAL {
+  type: 'OPEN_MODAL',
+}
+
+interface CLOSE_MODAL {
+  type: 'CLOSE_MODAL'
+}
+
 export type Action =
   OPEN_SIDE_MENU |
   CLOSE_SIDE_MENU |
   SET_IS_ADDING_ENTRY |
   START_DRAGGING |
-  END_DRAGGING
+  END_DRAGGING |
+  OPEN_MODAL |
+  CLOSE_MODAL 

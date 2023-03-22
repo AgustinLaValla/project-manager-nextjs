@@ -3,13 +3,15 @@ export interface UIState {
   sidemenuOpen: boolean;
   isAddingEntry: boolean;
   isDragging: boolean;
+  modalOpened: boolean;
 }
 
 
 const initialState: UIState = {
   sidemenuOpen: false,
   isAddingEntry: false,
-  isDragging: false
+  isDragging: false,
+  modalOpened: false
 }
 
 export const UIReducer = (state: UIState = initialState, action: Action): UIState => {
@@ -43,6 +45,18 @@ export const UIReducer = (state: UIState = initialState, action: Action): UIStat
       return {
         ...state,
         isDragging: false
+      }
+
+    case 'OPEN_MODAL':
+      return {
+        ...state,
+        modalOpened: true
+      }
+
+    case 'CLOSE_MODAL':
+      return {
+        ...state,
+        modalOpened: false
       }
 
     default:

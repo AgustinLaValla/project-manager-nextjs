@@ -15,4 +15,9 @@ interface SET_ENTRIES {
    payload:  Entry[]
 }
 
-export type Action = ADD_NEW_ENTRY | UPDATE_ENTRY | SET_ENTRIES;
+interface DELETE_ENTRY {
+  type: 'DELETE_ENTRY',
+   payload:  string
+}
+
+export type Action = ADD_NEW_ENTRY | UPDATE_ENTRY | SET_ENTRIES | DELETE_ENTRY;

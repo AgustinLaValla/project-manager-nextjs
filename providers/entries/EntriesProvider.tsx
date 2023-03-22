@@ -51,6 +51,21 @@ export const EntriesProvider = ({ children }: EntriesProviderProps) => {
     }
   };
 
+  const deleteEntry = async (id: string) => {
+    await entriesApi.delete(`/${id}`);
+    dispatch({ type: 'DELETE_ENTRY', payload: id });
+    enqueueSnackbar({
+      variant: 'success',
+      autoHideDuration: 1500,
+      anchorOrigin: {
+        vertical: 'top',
+        horizontal: 'center'
+      },
+      message: 'Entry deleted!'
+    });
+
+  }
+
   const getEntries = async () => {
     const { data } = await entriesApi.get<{ entries: Entry[] }>('');
     dispatch({ type: 'SET_ENTRIES', payload: data.entries })
@@ -64,7 +79,8 @@ export const EntriesProvider = ({ children }: EntriesProviderProps) => {
     <EntriesContext.Provider value={{
       ...state,
       addNewEntry,
-      updateEntry
+      updateEntry,
+      deleteEntry
     }}>
       {children}
     </EntriesContext.Provider>
